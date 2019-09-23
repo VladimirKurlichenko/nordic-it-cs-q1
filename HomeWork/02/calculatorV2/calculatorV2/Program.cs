@@ -7,42 +7,42 @@ namespace calculatorV2
         {
             Console.WriteLine("Enter two number. \n");
 
-            Console.WriteLine("Enter variable x ");
-            var x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter variable fist operand ");
+            var fistOperand = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter variable y ");
-            var y = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter variable second operand ");
+            var secondOperand = double.Parse(Console.ReadLine());
 
             Console.WriteLine("\nSelect operation: \n" + "+\n" + "-\n" + "*\n" + 
                               "/\n" + "%\n" + "^\n");
 
             Console.WriteLine("Your choice: ");
-            string op = Console.ReadLine();
+            string operation = Console.ReadLine();
             Console.WriteLine("\nResult: ");
-            switch (op)
+            switch (operation)
             {
                 case "+":
-                    Console.WriteLine($"{x} + {y} = {x + y}");
+                    Console.WriteLine($"{fistOperand} + {secondOperand} = {fistOperand + secondOperand}");
                     break;
 
                 case "-":
-                    Console.WriteLine($"{x} - {y} = {x - y}");
+                    Console.WriteLine($"{fistOperand} - {secondOperand} = {fistOperand - secondOperand}");
                     break;
 
                 case "*":
-                    Console.WriteLine($"{x} * {y} = {x * y}");
+                    Console.WriteLine($"{fistOperand} * {secondOperand} = {fistOperand * secondOperand}");
                     break;
 
                 case "/":
-                    Console.WriteLine($"{x} / {y} = {x / y}");
+                    Console.WriteLine($"{fistOperand} / {secondOperand} = {fistOperand / secondOperand}");
                     break;
 
                 case "%":
-                    Console.WriteLine($"{x} % {y} = {x % y}");
+                    Console.WriteLine($"{fistOperand} % {secondOperand} = {fistOperand % secondOperand}");
                     break;
 
                 case "^":
-                    Console.WriteLine($"{x} ^ {y} = {Math.Pow(x, y)}");
+                    Console.WriteLine($"{fistOperand} ^ {secondOperand} = {Math.Pow(fistOperand, secondOperand)}");
                     break;
 
             }

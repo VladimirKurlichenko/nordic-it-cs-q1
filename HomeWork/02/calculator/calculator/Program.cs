@@ -8,18 +8,18 @@ namespace calculator
         {
             Console.WriteLine("Enter two number.\n");
 
-            Console.WriteLine("Enter variable x ");
-            var x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter variable fist operand ");
+            var fistOperand = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter variable y ");
-            var y = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter variable second operand ");
+            var secondOperand = double.Parse(Console.ReadLine());
 
             Console.WriteLine("\nCalculation result:");
-            Console.WriteLine($"{x} + {y} = {x + y}");
+            Console.WriteLine($"{fistOperand} + {secondOperand} = {fistOperand + secondOperand}");
 
-            Console.WriteLine($"{x} - {y} = {x - y}");
+            Console.WriteLine($"{fistOperand} - {secondOperand} = {fistOperand - secondOperand}");
 
-            Console.WriteLine($"{x} * {y} = {x * y}");
+            Console.WriteLine($"{fistOperand} * {secondOperand} = {fistOperand * secondOperand}");
 
             Console.ReadKey();
 
