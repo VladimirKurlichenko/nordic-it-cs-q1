@@ -7,8 +7,8 @@ namespace calculatorV2
         {
             Console.WriteLine("Enter two number. \n");
 
-            Console.WriteLine("Enter variable fist operand ");
-            var fistOperand = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter variable first operand ");
+            var firstOperand = double.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter variable second operand ");
             var secondOperand = double.Parse(Console.ReadLine());
@@ -22,27 +22,27 @@ namespace calculatorV2
             switch (operation)
             {
                 case "+":
-                    Console.WriteLine($"{fistOperand} + {secondOperand} = {fistOperand + secondOperand}");
+                    Console.WriteLine($"{firstOperand} + {secondOperand} = {firstOperand + secondOperand}");
                     break;
 
                 case "-":
-                    Console.WriteLine($"{fistOperand} - {secondOperand} = {fistOperand - secondOperand}");
+                    Console.WriteLine($"{firstOperand} - {secondOperand} = {firstOperand - secondOperand}");
                     break;
 
                 case "*":
-                    Console.WriteLine($"{fistOperand} * {secondOperand} = {fistOperand * secondOperand}");
+                    Console.WriteLine($"{firstOperand} * {secondOperand} = {firstOperand * secondOperand}");
                     break;
 
                 case "/":
-                    Console.WriteLine($"{fistOperand} / {secondOperand} = {fistOperand / secondOperand}");
+                    Console.WriteLine($"{firstOperand} / {secondOperand} = {firstOperand / secondOperand}");
                     break;
 
                 case "%":
-                    Console.WriteLine($"{fistOperand} % {secondOperand} = {fistOperand % secondOperand}");
+                    Console.WriteLine($"{firstOperand} % {secondOperand} = {firstOperand % secondOperand}");
                     break;
 
                 case "^":
-                    Console.WriteLine($"{fistOperand} ^ {secondOperand} = {Math.Pow(fistOperand, secondOperand)}");
+                    Console.WriteLine($"{firstOperand} ^ {secondOperand} = {Math.Pow(firstOperand, secondOperand)}");
                     break;
 
             }
