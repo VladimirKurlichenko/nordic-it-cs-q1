@@ -6,12 +6,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите свое имя:");
+            Console.WriteLine("Enter your name.");
             string name = Console.ReadLine();
             Thread.Sleep(5000);
-            Console.WriteLine($"Здравствуйте, {name}");
+            Console.WriteLine($"Hello, {name}!");
             Thread.Sleep(5000);
-            Console.WriteLine($"До свидания, {name}");
+            Console.WriteLine($"Goodbye, {name}!");
             Console.ReadKey();
         }
     }

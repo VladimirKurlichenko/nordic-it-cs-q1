@@ -6,20 +6,22 @@ namespace calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите два числа:\n");
+            Console.WriteLine("Enter two number.\n");
 
-            Console.WriteLine("Введите переменную x ");
+            Console.WriteLine("Enter variable x ");
             var x = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите переменную y ");
+            Console.WriteLine("Enter variable y ");
             var y = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nРезультат вычислений:");
+            Console.WriteLine("\nCalculation result:");
             Console.WriteLine($"{x} + {y} = {x + y}");
 
             Console.WriteLine($"{x} - {y} = {x - y}");
 
             Console.WriteLine($"{x} * {y} = {x * y}");
+
+            Console.ReadKey();
 
         }
     }

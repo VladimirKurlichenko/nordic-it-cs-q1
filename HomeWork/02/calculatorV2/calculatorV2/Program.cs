@@ -5,20 +5,20 @@ namespace calculatorV2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите два числа: \n");
+            Console.WriteLine("Enter two number. \n");
 
-            Console.WriteLine("Введите переменную x ");
+            Console.WriteLine("Enter variable x ");
             var x = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите переменную y ");
+            Console.WriteLine("Enter variable y ");
             var y = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nВыберите операцию: \n" + "+ - Сложение\n" + "- - Вычитание\n" + "* - Умножение\n" + 
-                              "/ - Деление\n" + "% - Остаток от деления\n" + "^ - Возвести в степень\n");
+            Console.WriteLine("\nSelect operation: \n" + "+\n" + "-\n" + "*\n" + 
+                              "/\n" + "%\n" + "^\n");
 
-            Console.WriteLine("Ваш выбор: ");
+            Console.WriteLine("Your choice: ");
             string op = Console.ReadLine();
-            Console.WriteLine("\nРезультат: ");
+            Console.WriteLine("\nResult: ");
             switch (op)
             {
                 case "+":
@@ -46,6 +46,8 @@ namespace calculatorV2
                     break;
 
             }
+
+            Console.ReadKey();
         }
     }
 }
