@@ -3,7 +3,7 @@
 namespace ColorSelection
 {
     [Flags]
-    enum Colors
+    enum Colors: short
     {
         Black = 1,
         Blue = 2,
@@ -33,20 +33,14 @@ namespace ColorSelection
             for (int i = 0; i < 4; i++)
             {
                 Console.Write($"\nChoose {i+1} color you like: ");
-                favoriteColors = favoriteColors | (Colors)int.Parse(Console.ReadLine());
+                favoriteColors = favoriteColors | (Colors)short.Parse(Console.ReadLine());
             }
 
             Colors noFavoriteColors = 0;
-            for (int i = 0; i < 9; i++)
-            {
-                double mark = Math.Pow(2, i);
-                if ((favoriteColors & (Colors)mark) != (Colors)mark)
-                {
-                    noFavoriteColors = noFavoriteColors | (Colors)mark; 
-                }
-            }
 
-            Console.WriteLine($"Favorite colors: {favoriteColors}\nUnlived colors: {noFavoriteColors}");
+            noFavoriteColors = (Colors)(~(short)favoriteColors ^ 65024);
+
+            Console.WriteLine($"Favorite colors: {favoriteColors}\nUnloved colors: {noFavoriteColors}");
 
             Console.ReadKey();
         }
