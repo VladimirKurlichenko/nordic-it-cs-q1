@@ -12,102 +12,74 @@ namespace Figures
     };
     class Program
     {
-       
+        static void GetFigures()
+        {
+            var values = (Figures[])Enum.GetValues(typeof(Figures));
+
+            Console.WriteLine("List of Shapes:");
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                Console.WriteLine($"{(int)values[i]} - {values[i]}");
+            }
+        }
         static void Main(string[] args)
         {
             GetFigures();
 
             int typeFigures = default;
-            bool a = true;
-            while (a)
+            typeFigures = EnterFigures(typeFigures);
+
+            double squareOfFigure = default;
+            double perimeterOfFigure = default;
+            switch (typeFigures)
             {
-                try
-                {
-                    Console.Write("Select shape: ");
-                    typeFigures = int.Parse(Console.ReadLine());
-
-                    if (typeFigures < 1)
+                case 1:
                     {
-                        throw new ArgumentOutOfRangeException();
-                    }
-                    if (typeFigures > 3)
-                    {
-                        throw new ArgumentOutOfRangeException();
-                    }
+                        double circleDiameter = default;
+                        string textDiameter = "Enter the diameter value: ";
+                        circleDiameter = EnterVariable(circleDiameter, textDiameter);
 
-                    a = false;
-
-                }
-                catch (FormatException formatException)
-                {
-                    Console.WriteLine(formatException.Message);
-                }
-                catch (ArgumentOutOfRangeException argumentExeption)
-                {
-                    Console.WriteLine(argumentExeption.Message);
-                }
-            }
-
-            double result;
-             switch (typeFigures)
-             {
-                 case 1:
-                     {
-                        double radius = default;
-                        a = true;
-                        while (a)
-                        {
-                            try
-                            {
-                                Console.Write("Enter radius : ");
-                                radius = double.Parse(Console.ReadLine());
-
-                                if (radius < 0)
-                                {
-                                    throw new ArgumentOutOfRangeException();
-                                }
-                                a = false;
-                            }
-                            catch (FormatException formatException)
-                            {
-                                Console.WriteLine(formatException.Message);
-                            }
-                            catch (ArgumentOutOfRangeException argumentExeption)
-                            {
-                                Console.WriteLine(argumentExeption.Message);
-                            }
-
-                        }
-
-                        result = 2 * Math.PI * radius;
-
-                        Console.WriteLine($"Circle perimeter = {result} ");
-
+                        squareOfFigure = Math.PI * Math.Pow(circleDiameter / 2d, 2);
+                        perimeterOfFigure = Math.PI * circleDiameter;
 
                         break;
-                     }
-                 case 2:
-                     {
+                    }
+                case 2:
+                    {
+                        double sideOfTriangle = default;
+                        string textTriangle = "Enter the value of the side of the triangle: ";
+                        sideOfTriangle = EnterVariable(sideOfTriangle, textTriangle);
 
-                         break;
-                     }
-                 case 3:
-                     {
+                        squareOfFigure = (Math.Pow(sideOfTriangle, 2) * Math.Pow(3d, 2)) / 4d;
+                        perimeterOfFigure = sideOfTriangle * 3d;
+                        
+                        break;
+                    }
+                case 3:
+                    {
+                        double lengthOfRectangle = default;
+                        string textLenght = "Enter the length of the rectangle: ";
+                        lengthOfRectangle = EnterVariable(lengthOfRectangle, textLenght);
 
-                         break;
-                     }
+                        double widthOfRectangle = default;
+                        string textWidth = "Enter the width of the rectangle: ";
+                        widthOfRectangle = EnterVariable(widthOfRectangle, textWidth);
 
-             }
+                        squareOfFigure = lengthOfRectangle * widthOfRectangle;
+                        perimeterOfFigure = (lengthOfRectangle + widthOfRectangle) * 2;
 
-            Console.ReadKey();
+                        break;
+                    }
+            }
+
+            Console.WriteLine($"The surface area of the figure: {squareOfFigure}");
+            Console.WriteLine($"The perimeter of the figure: {perimeterOfFigure}");
         }
 
-
-        static string EnterFigures(int number)
+        static int EnterFigures(int number)
         {
-            number = default;
-            bool a = true;
-            while (a)
+            while (true)
             {
                 try
                 {
@@ -122,9 +94,7 @@ namespace Figures
                     {
                         throw new ArgumentOutOfRangeException();
                     }
-
-                    a = false;
-
+                    return number;
                 }
                 catch (FormatException formatException)
                 {
@@ -134,20 +104,35 @@ namespace Figures
                 {
                     Console.WriteLine(argumentExeption.Message);
                 }
-
             }
-            return default;
+
         }
-        static void GetFigures()
+
+        static double EnterVariable(double number, string text)
         {
-            var values = (Figures[])Enum.GetValues(typeof(Figures));
-
-            Console.WriteLine("List of Shapes:");
-
-            for (int i = 0; i < values.Length; i++)
+            while (true)
             {
-                Console.WriteLine($"{(int)values[i]} - {values[i]}");
+                try
+                {
+                    Console.Write(text);
+                    number = double.Parse(Console.ReadLine());
+
+                    if (number < 0)
+                    {
+                        throw new ArgumentOutOfRangeException();
+                    }
+                    return number;
+                }
+                catch (FormatException formatException)
+                {
+                    Console.WriteLine(formatException.Message);
+                }
+                catch (ArgumentOutOfRangeException argumentExeption)
+                {
+                    Console.WriteLine(argumentExeption.Message);
+                }
             }
+
         }
     }
 }
