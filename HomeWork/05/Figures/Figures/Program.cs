@@ -95,6 +95,7 @@ namespace Figures
                         throw new ArgumentOutOfRangeException();
                     }
                     return number;
+                    break;
                 }
                 catch (FormatException formatException)
                 {
@@ -122,6 +123,7 @@ namespace Figures
                         throw new ArgumentOutOfRangeException();
                     }
                     return number;
+                    break;
                 }
                 catch (FormatException formatException)
                 {
