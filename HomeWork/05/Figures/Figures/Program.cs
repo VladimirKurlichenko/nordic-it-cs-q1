@@ -28,7 +28,7 @@ namespace Figures
             GetFigures();
 
             int typeFigures = default;
-            typeFigures = EnterFigures(typeFigures);
+            typeFigures = EnterFigures();
 
             double squareOfFigure = default;
             double perimeterOfFigure = default;
@@ -38,7 +38,7 @@ namespace Figures
                     {
                         double circleDiameter = default;
                         string textDiameter = "Enter the diameter value: ";
-                        circleDiameter = EnterVariable(circleDiameter, textDiameter);
+                        circleDiameter = EnterVariable(textDiameter);
 
                         squareOfFigure = Math.PI * Math.Pow(circleDiameter / 2d, 2);
                         perimeterOfFigure = Math.PI * circleDiameter;
@@ -49,7 +49,7 @@ namespace Figures
                     {
                         double sideOfTriangle = default;
                         string textTriangle = "Enter the value of the side of the triangle: ";
-                        sideOfTriangle = EnterVariable(sideOfTriangle, textTriangle);
+                        sideOfTriangle = EnterVariable(textTriangle);
 
                         squareOfFigure = (Math.Pow(sideOfTriangle, 2) * Math.Pow(3d, 2)) / 4d;
                         perimeterOfFigure = sideOfTriangle * 3d;
@@ -60,11 +60,11 @@ namespace Figures
                     {
                         double lengthOfRectangle = default;
                         string textLenght = "Enter the length of the rectangle: ";
-                        lengthOfRectangle = EnterVariable(lengthOfRectangle, textLenght);
+                        lengthOfRectangle = EnterVariable(textLenght);
 
                         double widthOfRectangle = default;
                         string textWidth = "Enter the width of the rectangle: ";
-                        widthOfRectangle = EnterVariable(widthOfRectangle, textWidth);
+                        widthOfRectangle = EnterVariable(textWidth);
 
                         squareOfFigure = lengthOfRectangle * widthOfRectangle;
                         perimeterOfFigure = (lengthOfRectangle + widthOfRectangle) * 2;
@@ -77,14 +77,14 @@ namespace Figures
             Console.WriteLine($"The perimeter of the figure: {perimeterOfFigure}");
         }
 
-        static int EnterFigures(int number)
+        static int EnterFigures()
         {
             while (true)
             {
                 try
                 {
                     Console.Write("Select shape: ");
-                    number = int.Parse(Console.ReadLine());
+                   int number = int.Parse(Console.ReadLine());
 
                     if (number < 1)
                     {
@@ -95,7 +95,6 @@ namespace Figures
                         throw new ArgumentOutOfRangeException();
                     }
                     return number;
-                    break;
                 }
                 catch (FormatException formatException)
                 {
@@ -109,21 +108,20 @@ namespace Figures
 
         }
 
-        static double EnterVariable(double number, string text)
+        static double EnterVariable(string text)
         {
             while (true)
             {
                 try
                 {
                     Console.Write(text);
-                    number = double.Parse(Console.ReadLine());
+                   double number = double.Parse(Console.ReadLine());
 
                     if (number < 0)
                     {
                         throw new ArgumentOutOfRangeException();
                     }
                     return number;
-                    break;
                 }
                 catch (FormatException formatException)
                 {
