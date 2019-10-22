@@ -12,7 +12,7 @@ namespace Figures
     };
     class Program
     {
-        static void GetFigures()
+        static void DisplayFigures()
         {
             var values = (Figures[])Enum.GetValues(typeof(Figures));
 
@@ -25,10 +25,9 @@ namespace Figures
         }
         static void Main(string[] args)
         {
-            GetFigures();
+            DisplayFigures();
 
-            int typeFigures = default;
-            typeFigures = EnterFigures();
+            int typeFigures = EnterFigures();
 
             double squareOfFigure = default;
             double perimeterOfFigure = default;

@@ -19,7 +19,7 @@ namespace Accumulation
                     }
 
                     return number;
-                    break;
+
                 }
                 catch (FormatException formatException)
                 {

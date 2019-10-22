@@ -43,12 +43,9 @@ namespace EvenNumber
                 if (numbers % 2 == 0)
                 {
                     index++;
-                    numbers /= 10;
                 }
-                else
-                {
-                    numbers /= 10;
-                }
+
+                numbers /= 10;
             }
 
             Console.WriteLine($"The number of even digits indicated in {enterNumbers} is {index}.");
