@@ -35,14 +35,6 @@ namespace Parentheses
 
         static void Main(string[] args)
         {
-            //Console.WriteLine(Qualifier("()"));
-            //Console.WriteLine(Qualifier("[]()"));
-            //Console.WriteLine(Qualifier("[[]()]"));
-            //Console.WriteLine(Qualifier("([([])])()[]"));
-            //Console.WriteLine(Qualifier("("));
-            //Console.WriteLine(Qualifier("[][)"));
-            //Console.WriteLine(Qualifier("[(])"));
-            //Console.WriteLine(Qualifier("(()[]]"));
 
             string input;
             do
@@ -50,8 +42,6 @@ namespace Parentheses
                 Console.WriteLine("Enter a string containing parenthese. For exemple '(', ')'; '[', ']'");
                 input = Console.ReadLine();
             } while (string.IsNullOrWhiteSpace(input));
-
-
 
             Console.WriteLine(Qualifier(input));
         }
