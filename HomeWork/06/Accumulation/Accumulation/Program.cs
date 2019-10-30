@@ -4,7 +4,7 @@ namespace Accumulation
 {
     class Program
     {
-        static decimal Check(string words)
+        static decimal CheckAndWrite(string words)
         {
             decimal number;
 
@@ -43,15 +43,15 @@ namespace Accumulation
         {
             string wordsPayment = "Enter the amount of the down payment in rubles: ";
             decimal payment = default;
-            payment = Check(wordsPayment);
+            payment = CheckAndWrite(wordsPayment);
 
             string wordsPercent = "Enter the daily percentage of income as a decimal (1% = 0.01): ";
             decimal percentIncomes = default;
-            percentIncomes = Check(wordsPercent);
+            percentIncomes = CheckAndWrite(wordsPercent);
             
             string wordsAccumulation = "Enter the desired amount of savings in rubles: ";
             decimal accumulationAmount = default;
-            accumulationAmount = Check(wordsAccumulation);
+            accumulationAmount = CheckAndWrite(wordsAccumulation);
 
             int days = default;
             while (payment < accumulationAmount)
