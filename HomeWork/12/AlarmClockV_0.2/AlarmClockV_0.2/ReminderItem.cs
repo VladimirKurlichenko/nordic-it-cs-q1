@@ -20,16 +20,8 @@ namespace AlarmClockV_0._2
                 return AlarmDate - DateTime.Now;
             }
         }
-        public bool IsOutdated
-        {
-            get
-            {
-                if (TimeToAlrm >= TimeSpan.Zero)
-                    return true;
-                else
-                    return false;
-            }
-        }
+        public bool IsOutdated =>
+            TimeToAlrm >= TimeSpan.Zero;
 
         public virtual string Description =>
             $"Alarm date: {AlarmDate},\n" +

@@ -11,10 +11,7 @@ namespace AlarmClockV_0._2
             PhoneNumber = phoneNumber;
         }
         public override string Description =>
-            $"Alarm date: {AlarmDate},\n" +
-            $"Alarm message: {AlarmMessage},\n" +
-            $"Time to alarm: {TimeToAlrm},\n" +
-            $"Is out dater: {IsOutdated},\n" +
+            base.Description +
             $"Phone number: {PhoneNumber}.\n";
 
     }
