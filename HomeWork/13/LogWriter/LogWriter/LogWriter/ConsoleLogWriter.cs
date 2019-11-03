@@ -2,19 +2,19 @@
 
 namespace LogWriter
 {
-    class ConsoleLogWriter : AbstractLogWriter, ILogWriter
+    class ConsoleLogWriter : AbstractLogWriter
     {
         public override void LogInfo(string message)
         {
-            Console.WriteLine($"{DateTime.Now}      Info    {message}. ");
+            Console.WriteLine($"{base.Description("Info")}     {message}.");
         }
         public override void LogWarning(string message)
         {
-            Console.WriteLine($"{DateTime.Now}      Warning    {message}. ");
+            Console.WriteLine($"{base.Description("Warning")}      {message}.");
         }
         public override void LogError(string message)
         {
-            Console.WriteLine($"{DateTime.Now}      Error    {message}. ");
+            Console.WriteLine($"{base.Description("Error")}      {message}.");
         }
     }
 }
