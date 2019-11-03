@@ -7,7 +7,7 @@ namespace WordsOnA
         static void Main(string[] args)
         {
             int index = default;
-            string input= default;
+            string input;
 
             do
             {
