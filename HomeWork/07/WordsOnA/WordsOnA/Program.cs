@@ -8,40 +8,34 @@ namespace WordsOnA
         {
             int index = default;
             string input= default;
-            while (string.IsNullOrWhiteSpace(input))
+
+            do
             {
                 Console.Write("Please enter string from a few words:");
                 input = Console.ReadLine();
-            }
+                foreach (var item in input)
+                    if (char.IsDigit(item))
+                    {
+                        Console.WriteLine("The text contains numbers.");
+                        break;
+                    }
+
+            } while (string.IsNullOrWhiteSpace(input));
 
             var words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-            try
+            foreach (var item in words)
             {
-                foreach (var item in words)
+                
+                if (words.Length > 1)
                 {
-                    for (int i = 0; i < item.Length; i++)
+                    if (Char.ToUpper(item[0]) == 'A')
                     {
-                        if (char.IsDigit(item[i]))
-                        {
-                            throw new FormatException();
-                        }
+                        index++;
                     }
-                    if (words.Length > 1)
-                    {
-                        if (Char.ToUpper(item[0]) == 'A')
-                        {
-                            index++;
-                        }
-                    }
-                    else
-                        Console.WriteLine("You have entered too few words");
                 }
-            }
-            catch (FormatException formatException)
-            {
-
-                Console.WriteLine(formatException.Message);
+                else
+                    Console.WriteLine("You have entered too few words");
             }
 
             Console.WriteLine($"Numbers of words beginning with a lette 'А': {index}");
