@@ -18,16 +18,9 @@ namespace AlarmClock
                 return AlarmDate - DateTime.Now;
             }
         }
-        public bool IsOutdated
-        {
-            get
-            {
-                if (TimeToAlrm >= TimeSpan.Zero)
-                    return true;
-                else
-                    return false;
-            }
-        }
+        public bool IsOutdated =>
+            TimeToAlrm >= TimeSpan.Zero;
+
         public string Description =>
             $"Alarm date: {AlarmDate}, alarm message: {AlarmMessage}, time to alarm: {TimeToAlrm}, is out dater: {IsOutdated}";
     }
