@@ -33,7 +33,7 @@ namespace Figures
             double perimeterOfFigure = default;
             switch (typeFigures)
             {
-                case 1:
+                case (int)Figures.Circle:
                     {
                         double circleDiameter = default;
                         string textDiameter = "Enter the diameter value: ";
@@ -44,7 +44,7 @@ namespace Figures
 
                         break;
                     }
-                case 2:
+                case (int)Figures.EquilateralTriangle:
                     {
                         double sideOfTriangle = default;
                         string textTriangle = "Enter the value of the side of the triangle: ";
@@ -55,7 +55,7 @@ namespace Figures
                         
                         break;
                     }
-                case 3:
+                case (int)Figures.Rectangle:
                     {
                         double lengthOfRectangle = default;
                         string textLenght = "Enter the length of the rectangle: ";
