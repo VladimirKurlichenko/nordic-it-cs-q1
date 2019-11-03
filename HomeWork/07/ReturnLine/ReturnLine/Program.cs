@@ -11,24 +11,14 @@ namespace ReturnLine
 
             do
             {
-                try
-                {
-                    Console.Write("Enter not an empty string: ");
-                    words = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(words))
-                    {
-                        throw new Exception();
-                    }
-                }
-                catch (Exception)
-                {
+                Console.Write("Enter not an empty string: ");
+                words = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(words))
                     Console.WriteLine("Field cannot be empty !!");
-                }
 
             } while (string.IsNullOrWhiteSpace(words));
 
             char[] temporaryStorage = words.ToCharArray();
-            //string returnLine = default;
             var returnLine = new StringBuilder();
             for (int i = temporaryStorage.Length - 1; i >= 0; i--)
             {
