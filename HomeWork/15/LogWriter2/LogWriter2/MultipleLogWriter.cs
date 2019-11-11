@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace LogWriter
+﻿namespace LogWriter2
 {
     class MultipleLogWriter : ILogWriter
     {

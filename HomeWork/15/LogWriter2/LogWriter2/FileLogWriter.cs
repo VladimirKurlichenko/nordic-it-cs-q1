@@ -1,7 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
-namespace LogWriter
+namespace LogWriter2
 {
     class FileLogWriter : AbstractLogWriter, ILogWriter
     {

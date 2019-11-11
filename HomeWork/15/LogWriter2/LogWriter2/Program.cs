@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LogWriter
+namespace LogWriter2
 {
     class Program
     {
@@ -25,7 +25,6 @@ namespace LogWriter
             miltipleogriter.LogError("Message containing error");
 
             Console.ReadKey();
-
         }
     }
 }

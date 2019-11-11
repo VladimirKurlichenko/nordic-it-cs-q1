@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LogWriter
+namespace SinglLogWriter
 {
     class Program
     {
@@ -9,23 +9,22 @@ namespace LogWriter
             Console.Write("Enter a file name: ");
             var path = Console.ReadLine();
 
-            var filelogwriter = new FileLogWriter(path);
+            var filelogwriter = FileLogWriter.GetInstance(path);
             filelogwriter.LogInfo("Message containing information");
             filelogwriter.LogWarning("Message containing warning");
             filelogwriter.LogError("Message containing error");
 
-            var consolelogwriter = new ConsoleLogWriter();
+            var consolelogwriter = ConsoleLogWriter.GetInstance();
             consolelogwriter.LogInfo("Message containing information");
             consolelogwriter.LogWarning("Message containing warning");
             consolelogwriter.LogError("Message containing error");
 
-            var miltipleogriter = new MultipleLogWriter(consolelogwriter, filelogwriter);
+            var miltipleogriter = MultipleLogWriter.GetInstance(consolelogwriter, filelogwriter);
             miltipleogriter.LogInfo("Message containing information");
             miltipleogriter.LogWarning("Message containing warning");
             miltipleogriter.LogError("Message containing error");
 
             Console.ReadKey();
-
         }
     }
 }

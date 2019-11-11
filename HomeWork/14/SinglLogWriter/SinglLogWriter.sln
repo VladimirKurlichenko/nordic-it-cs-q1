@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinglLogWriter", "SinglLogWriter\SinglLogWriter.csproj", "{B7A4F2EE-0A67-498F-B4A7-68C68A9D2210}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7A4F2EE-0A67-498F-B4A7-68C68A9D2210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A4F2EE-0A67-498F-B4A7-68C68A9D2210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A4F2EE-0A67-498F-B4A7-68C68A9D2210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A4F2EE-0A67-498F-B4A7-68C68A9D2210}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67ED1163-0B2B-44E6-89E6-5CBAC6F7EF80}
+	EndGlobalSection
+EndGlobal

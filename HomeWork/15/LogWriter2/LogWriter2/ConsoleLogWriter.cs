@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LogWriter
+namespace LogWriter2
 {
     class ConsoleLogWriter : AbstractLogWriter, ILogWriter
     {
