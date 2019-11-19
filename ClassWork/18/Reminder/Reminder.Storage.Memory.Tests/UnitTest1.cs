@@ -42,8 +42,6 @@ namespace Reminder.Storage.Memory.Tests
             var storage = new ReminderStorage(item);
 
             Assert.Catch<ArgumentException>(() => storage.Create(item));
-
-
         }
     }
 }
