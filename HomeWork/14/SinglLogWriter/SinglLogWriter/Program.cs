@@ -6,15 +6,13 @@ namespace SinglLogWriter
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a file name: ");
-            var path = Console.ReadLine();
 
-            var filelogwriter = FileLogWriter.GetInstance(path);
+            var filelogwriter = FileLogWriter.GetInstance;
             filelogwriter.LogInfo("Message containing information");
             filelogwriter.LogWarning("Message containing warning");
             filelogwriter.LogError("Message containing error");
 
-            var consolelogwriter = ConsoleLogWriter.GetInstance();
+            var consolelogwriter = ConsoleLogWriter.GetInstance;
             consolelogwriter.LogInfo("Message containing information");
             consolelogwriter.LogWarning("Message containing warning");
             consolelogwriter.LogError("Message containing error");

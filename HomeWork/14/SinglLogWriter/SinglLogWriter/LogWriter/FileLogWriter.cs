@@ -5,21 +5,35 @@ namespace SinglLogWriter
 {
     class FileLogWriter : AbstractLogWriter, ILogWriter
     {
-        private readonly string _path; 
-        private static FileLogWriter instance;
-        private FileLogWriter(string path)
+        private static string _path = "log.txt";
+
+        private static FileLogWriter _instance;
+        public static FileLogWriter GetInstance
         {
-            _path = path;
-        }
-        public static FileLogWriter GetInstance(string path)
-        {
-            return instance ??
-                (instance = new FileLogWriter(path));
+            get
+            {
+                return _instance ??
+               (_instance = new FileLogWriter());
+            }
         }
 
+        public static string Path 
+        {
+            get { return _path; }
+            set 
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                    _path = value;
+            }
+        }
 
+        private static string _WriterPath()
+        {
+            Console.Write("Enter path file: ");
+            return Console.ReadLine();
+        }
         protected override void WriteMessage(string line) =>
-            File.AppendAllText(_path, line);
+            File.AppendAllText(Path, line);
     }
 }
 

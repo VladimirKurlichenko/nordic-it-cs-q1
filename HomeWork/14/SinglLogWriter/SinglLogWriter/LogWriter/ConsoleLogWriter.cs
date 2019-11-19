@@ -4,13 +4,17 @@ namespace SinglLogWriter
 {
     class ConsoleLogWriter : AbstractLogWriter, ILogWriter
     {
-        private static ConsoleLogWriter instance;
+        private static ConsoleLogWriter _instance;
         private ConsoleLogWriter()
         { }
-        public static ConsoleLogWriter GetInstance()
+
+        public static ConsoleLogWriter GetInstance
         {
-            return instance ??
-                (instance = new ConsoleLogWriter());
+            get
+            {
+                return _instance ??
+                    (_instance = new ConsoleLogWriter());
+            }
         }
         protected override void WriteMessage(string line) =>
             Console.WriteLine(line);

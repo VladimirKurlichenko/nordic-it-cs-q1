@@ -6,15 +6,15 @@ namespace SinglLogWriter
     class MultipleLogWriter : ILogWriter
     {
         private readonly ILogWriter[] _logWriters;
-        private static MultipleLogWriter instance;
+        private static MultipleLogWriter _instance;
         private MultipleLogWriter(params ILogWriter[] writer)
         {
             _logWriters = writer;
         }
         public static MultipleLogWriter GetInstance(params ILogWriter[] _logwriters)
         {
-            return instance ??
-                (instance = new MultipleLogWriter(_logwriters));
+            return _instance ??
+                (_instance = new MultipleLogWriter(_logwriters));
         }
         public void LogInfo(string message)
         {
