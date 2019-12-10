@@ -2,13 +2,7 @@
 
 namespace Reminder.Storage
 {
-    public enum ReminderItemStatus
-    {
-        Created,
-        Ready,
-        Sent,
-        Failure
-    }
+
     public class ReminderItem
     {
         public Guid Id { get; }
@@ -19,8 +13,8 @@ namespace Reminder.Storage
 
         public ReminderItem(
             Guid id,
-            string contactId, 
-            string message, 
+            string contactId,
+            string message,
             DateTimeOffset messageDate,
             ReminderItemStatus status = ReminderItemStatus.Created)
         {
@@ -28,18 +22,26 @@ namespace Reminder.Storage
             {
                 throw new ArgumentException("Индификатор пустой", nameof(id));
             };
-            if (string.IsNullOrWhiteSpace(contactId))
+
+            if (contactId == default)
             {
                 throw new ArgumentException("Индификатор контакта пустой", nameof(contactId));
             };
-            if (string.IsNullOrWhiteSpace(message))
+
+            if (message == default)
             {
                 throw new ArgumentException("Сообщение пустое", nameof(message));
+            };
+
+            if (messageDate == default)
+            {
+                throw new ArgumentException("Дата сообщения не задана", nameof(messageDate));
             };
             if (messageDate == default)
             {
                 throw new ArgumentException("Дата сообщения не задана", nameof(messageDate));
             };
+
             Id = id;
             ContactId = contactId;
             Message = message;
@@ -47,9 +49,9 @@ namespace Reminder.Storage
             Status = status;
         }
 
-        public void ReadyToSend()
+        public void ReadyToSend(ReminderItem item)
         {
-            if(Status != ReminderItemStatus.Created)
+            if(Status == ReminderItemStatus.Created)
             {
                 throw new InvalidOperationException("Некорректный статус");
             }

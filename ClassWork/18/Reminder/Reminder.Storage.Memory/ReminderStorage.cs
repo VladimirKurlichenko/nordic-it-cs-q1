@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("Reminder.Storage.Memory.Tests")]
 namespace Reminder.Storage.Memory
 {
-    public class ReminderStorage : IReminderStorege
+    public class ReminderStorage : IReminderStorage
     {
         private readonly Dictionary<Guid, ReminderItem> _map;
 
@@ -40,18 +37,26 @@ namespace Reminder.Storage.Memory
 
         }
 
-        public List<ReminderItem> FindByDateTime(DateTimeOffset dateTime)
+        public List<ReminderItem> FindBy(ReminderItemFilter filter)
         {
-            var list = new List<ReminderItem>();
-
-            foreach (var item in _map)
+            if(filter == null)
             {
-                if(item.Value.MessageDate == dateTime)
-                {
-                    list.Add(item.Value);
-                }
+                throw new ArgumentException("  ", nameof(filter));
             }
-            return list;
+
+            var result = _map.Values.AsEnumerable();
+
+            if(filter.Status.HasValue)
+            {
+                result = result.Where(item => item.Status == filter.Status.Value);
+            }
+            if(filter.Status.HasValue)
+            {
+                result = result.Where(item => item.MessageDate == filter.DateTime.Value);
+            }
+
+            return result.ToList();
+
         }
 
         public void Update(ReminderItem item)
