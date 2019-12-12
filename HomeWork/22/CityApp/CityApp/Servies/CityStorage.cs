@@ -50,7 +50,6 @@ namespace CityApp.Servies
 
 		public void Update(City city)
 		{
-			var cityOriginal = _cities.First(x => x.Id == city.Id);
 			_cities.Remove(_cities.First(x => x.Id == city.Id));
 			_cities.Add(city);
 		}
