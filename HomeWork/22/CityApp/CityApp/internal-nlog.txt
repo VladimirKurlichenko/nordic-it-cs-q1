@@ -119,3 +119,9 @@
 2019-12-10 11:55:00.8031 Info Found 45 configuration items
 2019-12-10 11:56:19.4488 Info Shutting down logging...
 2019-12-10 11:56:19.4943 Info Logger has been shut down.
+2019-12-12 13:18:07.5322 Info Message Template Auto Format enabled
+2019-12-12 13:18:07.5554 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-12 13:18:07.7941 Info Adding target File Target[allfile]
+2019-12-12 13:18:07.8406 Info Adding target File Target[ownFile-web]
+2019-12-12 13:18:07.8594 Info Configured from an XML element in C:\Users\vovak\Desktop\nordic-it-cs-q1\HomeWork\22\CityApp\CityApp\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-12 13:18:07.8916 Info Found 45 configuration items

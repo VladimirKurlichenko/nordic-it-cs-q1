@@ -8,7 +8,7 @@ namespace SinglLogWriter
         private ConsoleLogWriter()
         { }
 
-        public static ConsoleLogWriter GetInstance
+        public static ConsoleLogWriter Instance
         {
             get
             {

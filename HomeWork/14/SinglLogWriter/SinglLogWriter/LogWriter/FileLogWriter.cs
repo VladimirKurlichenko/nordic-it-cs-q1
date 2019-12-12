@@ -8,7 +8,7 @@ namespace SinglLogWriter
         private static string _path = "log.txt";
 
         private static FileLogWriter _instance;
-        public static FileLogWriter GetInstance
+        public static FileLogWriter Instance
         {
             get
             {

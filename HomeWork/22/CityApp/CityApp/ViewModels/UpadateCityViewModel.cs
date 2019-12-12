@@ -5,6 +5,9 @@ namespace CityApp.WiewModels
 {
     public class UpadateCityViewModel
     {
+        [Required(ErrorMessage = "ID города не указано")]
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage = "Имя города не указано")]
         [MaxLength(length: 256)]
         public string Name { get; set; }

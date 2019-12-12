@@ -98,6 +98,11 @@ namespace CityApp.Controllers
                 return BadRequest();
             }
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             _storage.Delete(id);
 
             return Ok();
@@ -107,16 +112,13 @@ namespace CityApp.Controllers
         [HttpPut("api/city/{id}")]
         public IActionResult Update([FromBody] UpadateCityViewModel city, Guid id)
         {
-            if (city == null)
+            if (city == null || id == default)
             {
                 return BadRequest();
             }
 
             if (!ModelState.IsValid)
             {
-                var models = ModelState
-                    .Select(pair => new ValidationErrorViewModel(pair.Key, pair.Value))
-                    .ToArray();
                 return BadRequest();
             }
 
@@ -124,9 +126,9 @@ namespace CityApp.Controllers
                 (
                 city.Name,
                 city.Description,
-                city.Population
+                city.Population,
+                id
                 );
-            model.Id = id;
             _storage.Update(model);
             return Ok();
         }

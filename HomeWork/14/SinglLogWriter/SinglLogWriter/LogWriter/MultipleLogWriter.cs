@@ -11,7 +11,7 @@ namespace SinglLogWriter
         {
             _logWriters = writer;
         }
-        public static MultipleLogWriter GetInstance(params ILogWriter[] _logwriters)
+        public static MultipleLogWriter Instance(params ILogWriter[] _logwriters)
         {
             return _instance ??
                 (_instance = new MultipleLogWriter(_logwriters));
