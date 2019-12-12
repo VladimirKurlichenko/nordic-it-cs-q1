@@ -24,14 +24,17 @@ namespace FileWriter
             }
 
             using var fileStream = File.OpenWrite(fileName);
-            float percentage = default;
+            float percentage = percentageToFireEvent;
             for (int i = 0; i < data.Length; i++)
             {
                 fileStream.WriteByte(data[i]);
-                if ((i/ data.Length) % percentageToFireEvent == 0 && (i + 1) * percentageToFireEvent <= 1)
+                if (percentage < ((float)(i + 1) / (float)data.Length))
                 {
-                    percentage = (i + 1) * percentageToFireEvent * 100;
                     EventWritingPerformed?.Invoke(this, new WritingPerformed(percentage));
+
+                    percentage += percentageToFireEvent *
+                        ((float)Math.Floor((((float)(i + 1) / (float)data.Length) - percentage) / percentageToFireEvent) + 1);
+
                 }
             }
             EventWritingCompleted?.Invoke(this, null);

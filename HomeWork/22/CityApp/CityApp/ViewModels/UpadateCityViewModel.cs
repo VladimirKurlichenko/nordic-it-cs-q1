@@ -5,6 +5,12 @@ namespace CityApp.WiewModels
 {
     public class UpadateCityViewModel
     {
+        public UpadateCityViewModel(string name, string description, int population)
+        {
+            Name = name;
+            Description = description;
+            Population = population;
+        }
 
         [Required(ErrorMessage = "Имя города не указано")]
         [MaxLength(length: 256)]

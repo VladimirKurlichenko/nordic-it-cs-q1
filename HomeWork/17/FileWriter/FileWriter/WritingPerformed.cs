@@ -5,7 +5,7 @@
         public float Percentage { get;}
         public WritingPerformed(float percentage)
         {
-            Percentage = percentage;
+            Percentage = percentage*100;
         }
     }
 }
