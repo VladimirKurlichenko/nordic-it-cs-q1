@@ -1,0 +1,18 @@
+2019-12-05 20:35:35.7481||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\vovak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2019-12-05 20:35:37.4813|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/   
+2019-12-05 20:35:37.8327|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 352.0806ms 404  
+2019-12-05 20:35:42.6580|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/swagger   
+2019-12-05 20:35:42.6580|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3.7092ms 301  
+2019-12-05 20:35:42.6689|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html   
+2019-12-05 20:35:42.7969|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 127.985ms 200 text/html 
+2019-12-05 20:35:42.8569|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css   
+2019-12-05 20:35:42.8569|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js   
+2019-12-05 20:35:42.8569|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js   
+2019-12-05 20:35:42.9222|2|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2019-12-05 20:35:42.9222|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 67.3459ms 200 text/css 
+2019-12-05 20:35:42.9461|2|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2019-12-05 20:35:42.9526|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 92.1439ms 200 application/javascript 
+2019-12-05 20:35:42.9674|2|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2019-12-05 20:35:42.9674|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 117.1186ms 200 application/javascript 
+2019-12-05 20:35:43.3879|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json   
+2019-12-05 20:35:43.7348|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 346.9041ms 200 application/json;charset=utf-8 
